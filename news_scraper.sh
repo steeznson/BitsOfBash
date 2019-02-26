@@ -1,9 +1,12 @@
 #!bin/bash
 while true; do
-    java -jar ~/News/bbc_scraper.jar # my java news scraper
-    echo -n "Read another story? (y/n) "
+    java -jar ~/programming/bbc_scraper.jar # my java news scraper
+    echo -n "Read another story? (y) "
     read DECISION;
-    if [ "$DECISION" == "n" ]; then
-	break # stop if user exits
+    if [[ "$DECISION" == "n" ]]; then
+        break # stop if user exits
+    fi
+    if [[ -z "$DECISION" ]]; then
+        break # stop if no decision
     fi
 done
